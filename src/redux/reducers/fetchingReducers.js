@@ -1,7 +1,8 @@
 import {
   FETCH_PRODUCTS_BEGIN,
   FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE
+  FETCH_PRODUCTS_FAILURE,
+  CLEAR_SEARCH
 } from "../types";
 
 const initialState = {
@@ -40,6 +41,12 @@ export default function productReducer(state = initialState, action) {
         ...state,
         loading: false,
         error: action.payload.error,
+        items: []
+      };
+
+    case CLEAR_SEARCH:
+      return {
+        ...state,
         items: []
       };
 

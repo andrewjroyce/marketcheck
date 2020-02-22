@@ -1,7 +1,8 @@
 import {
   FETCH_PRODUCTS_BEGIN,
   FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE
+  FETCH_PRODUCTS_FAILURE,
+  CLEAR_SEARCH
 } from "../types";
 import axios from "axios";
 
@@ -40,6 +41,12 @@ export const fetchProductsSuccess = payload => {
   return {
     type: FETCH_PRODUCTS_SUCCESS,
     payload
+  };
+};
+
+export const clearSearch = () => {
+  return {
+    type: CLEAR_SEARCH
   };
 };
 

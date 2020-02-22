@@ -55,7 +55,7 @@ const ResultCard = ({ car }) => {
             />
           </ImageWrapper>
           <div>
-            <CarHeadline>{car.heading} </CarHeadline>
+            <CarHeadline>{car.heading}</CarHeadline>
             <div
               style={{
                 display: "grid",
@@ -76,7 +76,6 @@ const ResultCard = ({ car }) => {
               </div>
             </div>
           </div>
-
           <div
             style={{
               display: "grid",

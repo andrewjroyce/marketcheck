@@ -1,6 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchProducts, setMake, setYear, setModel } from "./redux/actions";
+import {
+  fetchProducts,
+  setMake,
+  setYear,
+  setModel,
+  clearSearch
+} from "./redux/actions";
 import styled from "styled-components";
 
 const makes = [
@@ -133,18 +139,21 @@ class Search extends React.Component {
 
   changeMake = event => {
     this.props.dispatch(setMake(event.target.value));
+    this.props.dispatch(clearSearch());
   };
 
   changeModel = event => {
     this.props.dispatch(setModel(event.target.value));
-  };
-
-  changeCity = event => {
-    this.setState({ city: event.target.value });
+    this.props.dispatch(clearSearch());
   };
 
   changeYear = event => {
     this.props.dispatch(setYear(event.target.value));
+    this.props.dispatch(clearSearch());
+  };
+
+  changeCity = event => {
+    this.setState({ city: event.target.value });
   };
 
   renderOptions = option => {
